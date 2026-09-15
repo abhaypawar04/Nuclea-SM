@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import { config } from "../config/env.js";
 
+//email service added credentials in a .env file
+
 export class EmailService {
   static getTransporter() {
     if (!config.email.host || !config.email.user) {
@@ -43,7 +45,14 @@ export class EmailService {
       </div>
     `;
 
-    return EmailService.sendMail(toEmail, subject, textContent, htmlContent, "Verification OTP", otp);
+    return EmailService.sendMail(
+      toEmail,
+      subject,
+      textContent,
+      htmlContent,
+      "Verification OTP",
+      otp,
+    );
   }
 
   /**
@@ -71,22 +80,35 @@ export class EmailService {
       </div>
     `;
 
-    return EmailService.sendMail(toEmail, subject, textContent, htmlContent, "Password Reset OTP", otp);
+    return EmailService.sendMail(
+      toEmail,
+      subject,
+      textContent,
+      htmlContent,
+      "Password Reset OTP",
+      otp,
+    );
   }
 
   static async sendMail(to, subject, text, html, typeLabel, otp) {
     const transporter = EmailService.getTransporter();
 
     // Console logging for dev / fallback when SMTP is not configured
-    console.log(`\n=================== [EMAIL SERVICE: ${typeLabel}] ===================`);
+    console.log(
+      `\n=================== [EMAIL SERVICE: ${typeLabel}] ===================`,
+    );
     console.log(`To: ${to}`);
     console.log(`Subject: ${subject}`);
     console.log(`OTP Code: ${otp}`);
     console.log(`Expires in: ${config.otp.expireMinutes} minutes`);
-    console.log(`========================================================================\n`);
+    console.log(
+      `========================================================================\n`,
+    );
 
     if (!transporter) {
-      console.log(`ℹ️ SMTP Credentials not fully configured. Logged OTP above for testing.`);
+      console.log(
+        `ℹ️ SMTP Credentials not fully configured. Logged OTP above for testing.`,
+      );
       return true;
     }
 
@@ -101,7 +123,10 @@ export class EmailService {
       console.log(`✅ Email sent successfully to ${to}`);
       return true;
     } catch (error) {
-      console.error(`❌ Failed to send email via SMTP to ${to}:`, error.message);
+      console.error(
+        `❌ Failed to send email via SMTP to ${to}:`,
+        error.message,
+      );
       console.log(`ℹ️ Falling back to console OTP: ${otp}`);
       return true; // Return true so flow is not broken in local environment
     }
