@@ -75,7 +75,7 @@ const studentSchema = new mongoose.Schema(
   },
 );
 
-// Indexes for better query performance
+// Indexes for better query performance index optimization
 // studentSchema.index({ email: 1 });
 // studentSchema.index({ studentId: 1 });
 studentSchema.index({ firstName: 1, lastName: 1 });
