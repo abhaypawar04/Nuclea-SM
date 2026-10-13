@@ -1,4 +1,4 @@
-# 🎓 Student Management System
+# 🎓 Student Management Syste
 
 A full-stack **Student Management System** developed using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 
