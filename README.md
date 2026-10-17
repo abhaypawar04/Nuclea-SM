@@ -3,7 +3,7 @@
 
 A full-stack **Student Management System** developed using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 
-The application provides a centralized platform to manage student information, academic details, and administrative operations through a responsive and user-friendly interface.
+The application provides a centralized platform to manage student information, academic detals, and administrative operations through a responsive and user-friendly interface.
 
 ## 🚀 Tech Stack
 
