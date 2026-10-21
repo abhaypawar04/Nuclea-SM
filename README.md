@@ -21,7 +21,7 @@ The application provides a centralized platform to manage student information, a
 * **Node.js** – Server-side runtime
 * **Express.js** – REST API development
 * **MongoDB** – Database
-* **Mongoose** – MongoDB object modeling
+* **Mongoose** – MongoDB object modeing
 
 ### Tools
 
