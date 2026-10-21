@@ -14,7 +14,7 @@ The application provides a centralized platform to manage student information, a
 * **CSS3** – Styling and responsive design
 * **JavaScript (ES6+)** – Application logic
 * **Axios** – API communication
-* **React Router** – Client-side routing
+* **React Router** – Client-side routin
 
 ### Backend
 
